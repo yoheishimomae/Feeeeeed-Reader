@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name = "format-detection" content = "telephone=no">
+<title>SimpleUI</title>
+<link rel="stylesheet" href="style/master.css" type="text/css"/>
+<link rel="stylesheet" media="only screen and (min-device-width:1100px)" type="text/css" href="style/desktop.css"/>
+</head>
+<body>
+	<div id="wrap"></div>
+	<script type="text/javascript" src="js/lib/xui-2.2.0.js"></script>
+	<script type="text/javascript" src="js/core.js"></script>
+	<script type="text/javascript" src="js/event.js"></script>
+	<script type="text/javascript">
+		
+		
+		var app = new AppCore();
+		app.add(new StackManager());
+		
+		app.listen(Event.STACK_HOME, function() {
+			app.loadStack(['header-home.html', 'body-home.html'], ['home.js'], {backwards:true});
+		});
+		
+		app.listen(Event.STACK_ABOUT, function() {
+			app.loadStack(['header-general.html', 'body-about.html'], ['about.js'], null);
+		});
+		
+		app.listen(Event.STACK_BACK, function() {
+			app.back();
+		});
+
+
+		window.onload = function() {
+			app.run(Event.STACK_HOME);
+		}
+		
+	</script>
+</body>
+</html>

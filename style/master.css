@@ -1,0 +1,233 @@
+* {
+	margin: 0;
+	padding: 0;
+	-webkit-touch-callout: none; /* prevent callout to copy image, etc when tap to hold */
+	-webkit-text-size-adjust: none; /* prevent webkit from resizing text to fit */
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+[data-ev] {
+	cursor: pointer;
+}
+
+
+body, html {
+	width:100%; 
+	overflow: auto;
+	overflow-x: hidden;
+	color: #444;
+	background: #fff;
+}
+
+#wrap {
+	overflow: hidden;
+	width:100%;
+	height: 100%;
+}
+
+/*---------------------------------------------------
+	Font
+---------------------------------------------------*/
+
+body {
+	font-family: 'HelveticaNeue-Light', Helvetica, Arial, sans-serif;
+	font-weight: 300;
+	font-size: 14px;
+}
+
+h1, label, button {
+	font-family: 'HelveticaNeue-Medium', Helvetica, Arial, sans-serif;
+	font-weight: 500;
+}
+
+h1 {
+	font-size: 22px;
+	font-weight: normal;
+}
+
+button {
+}
+
+
+/*---------------------------------------------------
+	Generic
+---------------------------------------------------*/
+
+a {
+}
+
+p {
+	line-height: 1.5em;
+}
+
+p + p {
+	margin-top: 1.2em;
+}
+
+
+/*---------------------------------------------------
+	Layout
+---------------------------------------------------*/
+
+.right, .left, .top {
+	position: absolute;
+	top: 0;
+}
+
+.left {
+	left: 0;
+}
+
+.right {
+	right: 0;
+}
+
+
+/*---------------------------------------------------
+	UI - General
+---------------------------------------------------*/
+
+@-webkit-keyframes spinner {
+	from {-webkit-transform: rotate(0deg);}
+	to {-webkit-transform: rotate(360deg);}
+}
+
+.spinner {
+	background: url(img/spinner.png);
+	width: 34px;
+	height: 34px;
+	-webkit-animation-duration: 1s;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-timing-function: linear;
+	-webkit-animation-name: spinner;	
+}
+
+.spinner.dark {
+	background-image: url(img/spinner_dark.png);
+}
+
+/*---------------------------------------------------
+	UI - Buttons
+---------------------------------------------------*/
+
+button {
+	height: 42px;
+	padding: 0 8px;
+	line-height: 42px;
+	text-shadow: #fff 0px 1px 1px;
+	color: #444;
+	border: 1px solid #31363d;
+	background: -webkit-gradient(linear, left top, left bottom, from(#cbcfd4), to(#939ba6));
+	-webkit-background-clip: padding-box;
+	-webkit-border-radius: 8px;
+}
+
+button:active {
+	background: -webkit-gradient(linear, left top, left bottom, from(#b3b6ba), to(#7d838c));
+}
+
+/*---------------------------------------------------
+	UI - Header
+---------------------------------------------------*/
+
+header, header button {
+	height: 48px;
+	line-height: 48px;
+}
+
+header button, header label {
+	font-size: 13px;
+}
+
+header {
+	text-shadow: #fff 0px 1px 1px;
+	position: relative;
+	text-align: center;
+	border-bottom: 1px solid #707070;
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ebebeb), to(#c1c1c1));
+	-webkit-box-shadow: 0px 1px 5px rgba(0,0,0,0.3);
+	z-index:99;
+}
+
+/* Title */
+header label {
+	padding: 0 90px;
+	overflow: hidden;
+	margin: 0 auto;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+/* Left Button */
+header button {
+	width: 72px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	background: transparent;
+	border: none;
+	border-right: 1px solid #707070;
+	-webkit-border-radius: 0;
+}
+
+/* Right Button */
+header button:nth-of-type(2) {
+	left: auto;
+	right: 0;
+	border: none;
+	border-left: 1px solid #707070;
+}
+
+header button:active {
+	background: rgba(0,0,0,0.1);
+}
+
+/*---------------------------------------------------
+	UI - Generic View
+---------------------------------------------------*/
+
+article {
+	padding: 24px 24px;
+}
+
+/*---------------------------------------------------
+	UI - List
+---------------------------------------------------*/
+
+.list li {
+	padding: 18px 16px;
+	padding-right: 48px;
+	background: #fff;
+	border-bottom: #cbcbcb 1px solid;
+	position: relative;
+	list-style: none;
+}
+
+.list li:active {
+	background: #eee;
+}
+
+.list li:after {
+	font-size: 24px;
+	line-height: 48px;
+	width: 24px;
+	text-align: center;
+	content: "›";
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	background: rgba(0,0,0,0.05);
+}
+
+/*---------------------------------------------------
+	UI - List
+---------------------------------------------------*/
+
+.info {
+	background: #eee;
+	padding: 8px;
+	text-align: center;
+	font-size: 12px;
+	-webkit-box-shadow: inset 0px -4px 4px rgba(0,0,0,0.07);
+}
